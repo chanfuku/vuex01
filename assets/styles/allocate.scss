@@ -1,0 +1,840 @@
+@import '~/assets/styles/vars.scss';
+$schedulerHeight: 500px; //スケジューラーの高さ
+
+
+/*//////////////////////////////////
+車両割付
+//////////////////////////////////*/
+
+
+/*
+車両割付
+---------------------------------------------------------------*/
+
+/*検索パネル*/
+.contentsBoxMb10{
+  margin: 0 0 10px 0;
+}
+.itemSlideBox {
+  padding: 20px 30px 10px;
+  border-radius: 5px;
+  border: 1px solid #DBDEE5;
+  position:relative;
+  box-sizing:border-box;
+}
+.inputSlideBlock{
+  margin:0 0 10px 0;
+  display: flex;
+  width: 100%;
+  position:relative;
+}
+.inputSlideBlock .inputItem dt{
+  width:60px;
+  font-weight:inherit;
+}
+.inputSlideBlock .inputItem dd{
+  display:inline-block;
+  align-items:center;
+}
+.inputSlideBlock input[class~=date]::-ms-clear 
+{
+  display:none;
+}
+
+/* 運行指示案件表示エリア */
+#instruction_mode {
+  background: #ffffff;
+  width: 100%;
+  min-height: 200px;
+  border: $border;
+  padding: 20px;
+  .operation_direction_title {
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 1.5rem;
+  }
+  .dir_confirm {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    height: 100%;
+    padding: 15px 5px;
+    line-height: 15px;
+    overflow: scroll;
+    li {
+      margin-right: 2px;
+      .instruction_content_area {
+        @extend .vehicle_card;
+        background: white;
+        width: $allocateCardWidth;
+        border: $border;
+        border-radius: $borderRadius;
+        .content_title {
+          position: relative;
+          i {
+            color: $buttonColor;
+            background: #ffffff;
+            padding: -1%;
+            border-radius: 50%;
+            position: absolute;
+            top: -1rem;
+            right: -0.9rem;
+            font-size: 1rem;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            z-index: 10;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 検索エリア */
+#allocate_select_area {
+  width: 100%;
+  background: #ffffff;
+  border: solid 1px #dbdee5;
+  border-radius: $borderRadius;
+  padding: 25px 29px;
+  .search_footer {
+    display: flex;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 21px;
+    .search_close {
+      font-weight: bold;
+      line-height: 1.5rem;
+      letter-spacing: 0.7px;
+      text-align: left;
+      color: #4390de;
+      text-decoration: underline;
+    }
+  }
+  i {
+    vertical-align: middle;
+  }
+  .search_add, .close {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #4390de;
+    color: #ffffff;
+    text-align: center;
+    margin-right: 10px;
+  }
+  .vehicle_select_area {
+    .vehicle_search_content {
+      margin-bottom: 20px;
+      display: flex;
+      height: 2.5rem;
+      input[type="text"] {
+        width: 100%;
+        border-style: none;
+        background-color: inherit;
+      }
+      .search_title {
+        vertical-align: middle;
+        width: 10%;
+        line-height: 2.5rem;
+        letter-spacing: 0.7px;
+        text-align: left;
+        color: $fontColor;
+      }
+      .search_title2 {
+        @extend .search_title;
+        margin-left: 15px;
+      }
+    }
+  }
+  /* 未割付案件カード */
+  .unallocated_content_area {
+    @extend .vehicle_card;
+  }
+  /* 未割付案件のカード並び */
+  ul.e-list-parent.e-ul {
+    display: flex;
+    list-style: none;
+  }
+}
+/* ドラッグしたカード*/
+.treeview-external-drag .unallocated_content_area {
+  @extend .vehicle_card;
+}
+
+.allocated_tooltip {
+  @extend .vehicle_card;
+  font-size: 14px !important;
+  width: 340px;
+  padding: 30px;
+  .allocateHoverHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    .vehicleFlag {
+      width: 80px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.1em;
+      background: #F5B439;
+      padding: 5px 10px;
+    }
+    .cargoFlag {
+      @extend .vehicleFlag;
+      background: #6EC39C;
+    }
+    .memoFlag {
+      @extend .vehicleFlag;
+      background: #acbacb;
+    }
+    .vehicleFlagStatus, .cargoFlagStatus {
+      width: 100px;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.1em;
+      border-radius: 20px;
+      background: #364F65;
+      padding: 5px 10px;
+    }
+  }
+  .content_detail {
+    margin: 10px 0 !important;
+    i {
+      font-size: 30px;
+      color: #a8b3be;
+      vertical-align: middle;
+      &.memo {
+        font-size: 20px;
+        position: absolute;
+        left: 45%;
+      }
+      &.allocated, &.cargo, &.vehicle {
+        left: 45%;
+      }
+    }
+  }
+  .allocarionBox {
+    width:100%;
+    .allocarionList {
+      width:100%;
+      display:table;
+      flex-wrap: wrap;
+      position:relative;
+      table-layout: fixed;
+      dt {
+        display: table-cell;
+        font-weight: bold;
+        width: 30%;
+        padding:0 10px 5px 0;
+      }
+      dd {
+        display: table-cell;
+        width:70%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding:0 0 5px 0;
+      }
+    }
+
+  }
+  .content_subdetail {
+    // margin-top: 12px;
+    .driverStatus {
+      width: 20px;
+      height: 15px;
+      margin: 0 0 10px 0;
+    }
+    .content_inner {
+      display: flex;
+      .content_inner1 {
+        font-weight: bold;
+        width: 30%;
+        position: relative;
+        .driver {
+          &.warning:before {
+            content: url(../../assets/images/icon_warning.svg);
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            left: -12px;
+            top: 5px;
+            transform: translateY(-50%);
+            background-size: auto;
+          }
+        }
+      }
+      .content_inner2 {
+        width: 70%;
+        p {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+/* 未割付案件カードやツールチップの中身 */
+.vehicle_card {
+  padding: 8px;
+  line-height: 1.5;
+  font-size: 12px;
+  color: #364f65;
+  position: relative;
+  .content_title {
+    letter-spacing: 0.6px;
+    text-align: left;
+    border-bottom: thin solid #acbacb;
+    display: flex;
+    justify-content: space-between;
+    .additional_count {
+      display: inline-block;
+      background: #6ec39c;
+      min-width: 42px;
+      border-radius: 3px 3px 0 0;
+      text-align: center;
+      color: #ffffff;
+      margin-left: 5px;
+    }
+  }
+  .content_detail {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 4px;
+    max-width: 100%;
+    .content_inner {
+      width: 45%;
+      // font-size: 0.8rem;
+      p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &.name1 {
+          font-weight: bold;
+        }
+      }
+    }
+    .arrow {
+      display: inline-block;
+      font-size: 2rem;
+      color: #a8b3be;
+      text-align: center;
+    }
+  }
+}
+
+// 期間選択エリア
+#date_range_select_area {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 0;
+  display: table;
+  line-height: 1.1rem;
+  .date {
+    width: 95%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    i {
+      color: $buttonColor;
+      margin: 0 20px;
+      cursor: pointer;
+      &:hover {
+        opacity: .75;
+      }
+    }
+  }
+  .vc-popover-content-wrapper {
+    z-index: 99;
+    .btn_today {
+      position: absolute;
+      bottom: 4%;
+      right: 4%;
+      font-size: 1rem;
+      z-index:11;
+    }
+  }
+}
+
+// 右クリックコンテキストメニュー
+#contextmenu {
+  li {
+    background: $buttonColor;
+    margin: 5px 15px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: $borderRadius;
+    &:hover {
+      opacity: .75;
+    }
+    .e-icons {
+      display: none;
+    }
+  }
+}
+
+// 車両
+.vehicle_content {
+  color: $fontColor;
+  .carnumber {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .detail {
+    .name {
+      @extend .carnumber;
+    }
+  }
+}
+
+/* イベントテンプレート */
+.e-schedule .e-timeline-view .e-appointment {
+  display: block;
+  border-radius: $borderRadius;
+  border-style: none;
+  height: 60px;
+  // background: transparent;
+  background: #ffffff;
+  .e-appointment-details {
+    padding: 0px;
+    display: block;
+  }
+  .template-wrap {
+    white-space: normal;
+    color: $fontColor;
+    .subject {
+      font-weight: 600;
+      font-size: 11px;
+      padding: 0 4px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .print {
+        &:after {
+          content: url(../../assets/images/icon_print_wh.svg);
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-size: auto;
+          margin: auto 0;
+        }
+      }
+      .printed {
+        &:before {
+          content: url(../../assets/images/icon_printed_wh.svg);
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-size: auto;
+          margin: auto 0;
+        }
+      }
+      .remove {
+        cursor: pointer;
+        &:before {
+          content: url(../../assets/images/btn_del_wh.svg);
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-size: auto;
+          margin: auto 0;
+        }
+      }
+    }
+    .body {
+      display: flex;
+      font-size: 12px;
+      padding: 4px 6px 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      .content {
+        width: 100%;
+        i {
+          margin-top: 10px;
+          color: #a8b3be;
+        }
+        p {
+          margin-bottom: 0;
+          &.address {
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+    /* 運行指示選択 */
+    &.direction_selected {
+      height: 58px;
+      border-radius: 6px;
+      border: 3px solid red !important;
+    }
+    /* 割付直後 */
+    &.just_allocated {
+      height: 58px;
+      animation: show-up 0.8s linear 3;
+      border: 1px solid #3980c9 !important;
+      border-radius: $borderRadius;
+      @keyframes show-up {
+        0%{
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100%{
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+    &.event_unselectable {
+      opacity: 0.3;
+    }
+    &.allocated {
+      height: 58px;
+      background: #e5f0fc;
+      // border: 1px solid #3980c9 !important;
+      border: 1px solid #3980c9;
+      border-radius: $borderRadius;
+      .subject {
+        @extend .subject;
+        background: #3980c9;
+      }
+    }
+    &.cargo {
+      height: 58px;
+      background: #e2faef;
+      border: 1px solid #6ec39c !important;
+      border-radius: $borderRadius;
+      .subject {
+        @extend .subject;
+        background: #6ec39c;
+      }
+    }
+    &.vehicle {
+      height: 58px;
+      background: #fcefd2;
+      border: 1px solid #f5b439 !important;
+      border-radius: $borderRadius;
+      .subject {
+        @extend .subject;
+        background: #f5b439;
+      }
+    }
+    &.memo {
+      height: 58px;
+      background: #ffffff;
+      border: 1px solid #acbacb !important;
+      border-radius: $borderRadius;
+      .subject {
+        @extend .subject;
+        background: #acbacb;
+      }
+    }
+  }
+
+}
+
+.e-date-header-wrap {
+  font-size: 10px !important;
+}
+/* .e-timeline-week-view .e-time-slots { */
+/*
+.e-timeline-view .e-time-slots {
+display: none;
+}
+ */
+
+.e-timeline-week-view .e-work-cells,
+.e-timeline-week-view .e-alternate-cells {
+  // border-style: solid none !important;
+}
+
+.e-schedule .e-timeline-view .e-work-cells {
+  background: #ffffff;
+}
+
+.e-schedule-table .e-resource-column-table tbody tr,
+.e-schedule-table .e-content-table tbody tr {
+  max-height: 50px;
+}
+
+.e-resource-cells {
+  &.e-child-node {
+    padding-top: 5px;
+    vertical-align: top !important;
+  }
+}
+
+.e-schedule .e-timeline-view .e-resource-cells,
+.e-schedule .e-timeline-view .e-work-cells {
+  // height: auto;
+  height: 70px; /* ドライバー欄の高さと調整 */
+}
+
+.e-schedule .e-timeline-view .e-appointment .e-left-icon,
+.e-schedule .e-timeline-view .e-appointment .e-right-icon {
+  display: none;
+}
+/*
+.e-resource-column-wrap,
+ */
+.e-content-wrap {
+  height: auto !important;
+  // max-height: $schedulerHeight !important;
+}
+
+.e-more-indicator {
+  top: 153px !important;
+  width: 55px !important;
+}
+
+.direction_narrow {
+  height: 12px !important;
+}
+
+/* ドライバー */
+.specialist-designation .subtitle {
+  background: #587b9d;
+  color: white;
+  border-radius: $borderRadius;
+  padding: 2px;
+}
+
+/* ツールチップ */
+.e-tooltip-wrap {
+  /* .tooltip-wrap { */
+  background: #ffffff !important;
+  border: solid 1px #adbfc9 !important;
+  padding: 2px;
+  border-radius: $borderRadius !important;
+  box-shadow: 0 0 10px 0 rgba(54, 79, 101, 0.3) !important;
+  opacity: 1;
+}
+
+.content-wrapper {
+  // display: -ms-flexbox;
+  // display: flex;
+}
+.schedule-container {
+  // padding-right: 10px;
+  width: 100%;
+  position: relative;
+  // max-height: $schedulerHeight;
+  padding-bottom: 10px;
+  .pulldown {
+    width: 190px;
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    z-index: 5;
+    input[type="text"] {
+      width: 170px;
+      border-style: none !important;
+      height: 18px !important;
+    }
+    .vue-treeselect__multi-value {
+      // display: none;
+    }
+  }
+}
+
+.title-container {
+  padding-bottom: 10px;
+}
+
+.e-device-hover {
+  background-color: #e0e0e0!important;
+}
+
+.title-container {
+  padding-bottom: 10px;
+}
+
+.treeview-external-drag #waiting {
+  height: 100%;
+  padding: 0;
+}
+
+.treeview-external-drag #waitid {
+  float: left;
+  width: 13%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 13px;
+  font-family: "Segoe UI";
+  color: #f9920b;
+  overflow: hidden;
+  margin: 9px 0;
+  padding: 0 2px 0 0;
+}
+
+.treeview-external-drag #waitdetails {
+  width: 100%;
+  float: left;
+  height: 100%;
+  padding: 0;
+}
+
+.title-text {
+  font-size: 18px;
+  margin: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+/* custom code end*/
+
+.treeview-external-drag #waitlist {
+  width: 100%;
+  height: 25%;
+  font-weight: bold;
+  /* font-family: "Segoe UI"; */
+  font-size: 12px;
+  color: #545554;
+  padding: 5px 0 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.treeview-external-drag #waitcategory,
+.dir-subcontent {
+  /*
+  height: 25%;
+  font-family: "Segoe UI";
+  font-size: 10px;
+  color: #545554;
+  opacity: 0.6;
+  padding-left: 10px;
+  padding-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+   */
+padding-left: 10px;
+padding-top: 5px;
+}
+
+#waitcategory .factory-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#waitdetails .arrow {
+  padding: 0 60% 0 40%;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.treeview-external-drag .e-list-text,
+.treeview-external-drag.e-rtl .e-list-text,
+.e-bigger .treeview-external-drag .e-list-text,
+.e-bigger .treeview-external-drag.e-rtl .e-list-text
+.unallocated_content_area .e-list-text {
+  background: white;
+  border: 0.5px solid #E1E7EC;
+  /* height: 70px; */
+  line-height: 15px;
+  padding: 0 5px;
+  width: $allocateCardWidth; //未割付カードの横幅
+  border-radius: $borderRadius;
+}
+
+.treeview-external-drag .e-list-parent,
+.treeview-external-drag.e-rtl .e-list-parent,
+.e-bigger .treeview-external-drag .e-list-parent,
+.e-bigger .treeview-external-drag.e-rtl .e-list-parent {
+  height: 100%;
+  padding: 0 2px;
+}
+
+.treeview-external-drag .e-list-item,
+.e-bigger .treeview-external-drag .e-list-item {
+  height: 100%;
+  padding: 0 0 5px 0;
+}
+
+.treeview-external-drag .e-fullrow,
+.e-bigger .treeview-external-drag .e-fullrow {
+  height: $allocateCardHeight;
+}
+
+.treeview-external-drag .e-list-item.e-hover > .e-fullrow,
+.treeview-external-drag .e-list-item.e-active > .e-fullrow,
+.treeview-external-drag .e-list-item.e-active.e-hover > .e-fullrow,
+.e-bigger .treeview-external-drag .e-list-item.e-hover > .e-fullrow,
+.e-bigger .treeview-external-drag .e-list-item.e-active > .e-fullrow,
+.e-bigger .treeview-external-drag .e-list-item.e-active.e-hover > .e-fullrow {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none !important;
+}
+
+.treeview-external-drag .e-text-content,
+.e-bigger .treeview-external-drag .e-text-content,
+.treeview-external-drag.e-rtl .e-text-content,
+.e-bigger .treeview-external-drag.e-rtl .e-text-content {
+  padding: 0;
+}
+.e-drag-item.e-treeview.treeview-external-drag,
+.e-bigger .e-drag-item.e-treeview.treeview-external-drag {
+  padding: 0 !important;
+}
+
+.e-schedule.schedule-drag-drop .e-timeline-view .e-resource-left-td,
+.e-schedule.schedule-drag-drop .e-timeline-month-view .e-resource-left-td {
+  width: 160px;
+}
+
+.e-schedule.schedule-drag-drop .e-resource-cells.e-parent-node .specialist-category {
+  padding-left: 30px
+}
+
+.e-schedule.e-rtl.schedule-drag-drop .e-resource-cells.e-parent-node .specialist-category {
+  padding-right: 30px
+}
+
+.e-schedule.schedule-drag-drop .e-resource-cells.e-child-node .specialist-category,
+.e-schedule.schedule-drag-drop .e-resource-cells.e-child-node .specialist-name {
+  padding: 5px
+}
+
+.e-schedule.schedule-drag-drop .e-resource-cells.e-parent-node .specialist-name {
+  padding: 0 10px
+}
+
+.e-schedule.schedule-drag-drop .specialist-name {
+  font-size: 13px;
+}
+.e-schedule.schedule-drag-drop .specialist-designation {
+  font-size: 10px;
+}
+
+.e-schedule.schedule-drag-drop .specialist-image {
+  width: 45px;
+  height: 40px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: 45px;
+}

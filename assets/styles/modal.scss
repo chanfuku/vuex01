@@ -1,0 +1,277 @@
+@import '~/assets/styles/vars.scss';
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 900px;
+  margin: 0px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+}
+
+.modal-header {
+  padding: 10px 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  h3 {
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    .subject {
+      width: 50%;
+    }
+    .content {
+      font-weight: bold;
+      // width: 45%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    i {
+      cursor: pointer;
+      color: $buttonColor;
+    }
+  }
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+.modal-body {
+  margin: 20px 0;
+  padding: 20px;
+  height: 400px;
+  overflow: auto;
+  .inner_body {
+    padding: 5px;
+    .inner_box {
+      width: 20%;
+      margin-right: 5%;
+    }
+    .inner_content {
+      display: inline-flex;
+      width: 49%;
+    }
+    .inner_title {
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 3%;
+    }
+    .inner_name {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      vertical-align: middle;
+    }
+    .inner_date {
+      display: inline;
+      input {
+        width: 180px;
+      }
+    }
+    .inner_title_header {
+      @extend .inner_title;
+      margin-top: 10px;
+      width: 49%;
+      padding-bottom: 5px;
+      border-bottom: thin solid #acbacb;
+      vertical-align: middle;
+      &.full {
+        width: 100%;
+      }
+    }
+  }
+  .w_20 {
+    width: 20%;
+  }
+  .w_30 {
+    width: 30%;
+  }
+  .w_40 {
+    width: 40%;
+  }
+  .w_50 {
+    width: 50%;
+  }
+  .w_60 {
+    width: 60%;
+  }
+  .w_70 {
+    width: 70%;
+  }
+  .w_80 {
+    width: 80%;
+  }
+  .w_90 {
+    width: 90%;
+  }
+  .content_box {
+    border: $border;
+    padding: 20px;
+    margin-bottom: 5px;
+    h4 {
+      font-size: 16px;
+      font-weight: bold;
+      .instruction_check {
+        font-weight: normal;
+        margin-left: 0.5rem;
+      }
+    }
+    hr {
+      border-width: 1px 0px 0px 0px;
+      border-style: solid;
+      border-color: #cccccc;
+      height: 1px;
+      margin: 10px 0;
+    }
+    &.sub_content {
+      background: #e4edf7;
+    }
+    p {
+      font-weight: bold;
+      &.inner_box_title {
+        padding: 10px;
+      }
+      &.ordinal {
+        font-size: 18px;
+        letter-spacing: 0.9px;
+        text-decoration: underline #4390de;
+      }
+    }
+    .inner_footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+    li {
+      @extend .content_inner_box_body;
+      padding-left: 0 !important;
+      cursor: grab;
+      display: table;
+      .loadedtype {
+        display: table-cell;
+        width: 8%;
+        padding: 0.5rem 0;
+        font-weight: bold;
+        .load {
+          background: $buttonColor;
+          color: #ffffff;
+          padding: 0.2rem 1.2rem 0.2rem;
+          border-radius: 0px 3px 3px 0;
+        }
+        .unload {
+          background: #ffffff;
+          color: $buttonColor;
+          padding: 0.2rem 1.2rem 0.2rem;
+          border: solid 1px $buttonColor;
+          border-radius: 0px 3px 3px 0;
+        }
+      }
+      .date, .time {
+        display: table-cell;
+        width: 5%;
+      }
+      .name {
+        display: table-cell;
+        width: 10%;
+      }
+      .address {
+        display: table-cell;
+        width: 20%;
+      }
+      .updown {
+        display: table-cell;
+        width: 5%;
+        i {
+          color: $buttonColor;
+          background: #ffffff;
+          font-size: 1.5rem;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: center;
+          margin: 0 0.2rem;
+          cursor: pointer;
+        }
+      }
+      .close {
+        display: table-cell;
+        width: 5%;
+        text-align: center;
+        i {
+          color: $buttonColor;
+          background: #ffffff;
+          font-size: 1.5rem;
+          display: inline-block;
+          vertical-align: middle;
+          cursor: pointer;
+        }
+      }
+    }
+    .content_inner_box_body {
+      background: #ffffff;
+      border: solid 1px #dbdee5;
+      padding: 10px 30px;
+      margin-top: 5px;
+      &.flex {
+        display: flex;
+        justify-content: space-between;
+      }
+      .box_header_body {
+        width: 30%;
+        &.wdh_50 {
+          width: 50%;
+        }
+        .header_title {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

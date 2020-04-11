@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "label": "大カテゴリ01",
+    "class": "group",
+    "show": true,
+    "companyIds": [3,4]
+  },
+  {
+    "id": 2,
+    "label": "大カテゴリ02",
+    "class": "group",
+    "show": true,
+    "companyIds": [5,6,7]
+  },
+  {
+    "id": 3,
+    "label": "小カテゴリ01",
+    "class": "company",
+    "show": true
+  },
+  {
+    "id": 4,
+    "label": "小カテゴリ02",
+    "class": "company",
+    "show": true
+  },
+  {
+    "id": 5,
+    "label": "小カテゴリ03",
+    "class": "company",
+    "show": true
+  },
+  {
+    "id": 6,
+    "label": "小カテゴリ04",
+    "class": "company",
+    "show": true
+  },
+  {
+    "id": 7,
+    "label": "小カテゴリ05",
+    "class": "company",
+    "show": true
+  }
+]

@@ -1,0 +1,72 @@
+[
+{
+  "Text": "新宿四郎",
+  "Id": 1,
+  "AreaId": 1,
+  "CategoryIds": [1, 2, 3, 4],
+  "CarNumber": 1234,
+  "TruckName": "自社",
+  "CompanyId": 1,
+  "Designation": "2t平"
+},
+{
+  "Text": "渋谷花子",
+  "Id": 2,
+  "AreaId": 1,
+  "CategoryIds": [1, 2, 3, 5],
+  "CarNumber": 9999,
+  "TruckName": "自社",
+  "CompanyId": 1,
+  "Designation": "10t平"
+},
+{
+  "Text": "世田谷一郎",
+  "Id": 3,
+  "AreaId": 1,
+  "CarNumber": 5555,
+  "CategoryIds": [1, 2, 3, 6],
+  "TruckName": "自社",
+  "CompanyId": 1,
+  "Designation": "2t平"
+},
+{
+  "Text": "目黒一郎",
+  "Id": 4,
+  "AreaId": 1,
+  "CarNumber": 6666,
+  "CategoryIds": [1, 2, 7, 8],
+  "TruckName": "サンプル会社",
+  "CompanyId": 2,
+  "Designation": "2t平"
+},
+{
+  "Text": "横浜二郎",
+  "Id": 5,
+  "AreaId": 11,
+  "CategoryIds": [11, 12, 17, 18],
+  "CarNumber": 8765,
+  "TruckName": "サンプル会社",
+  "CompanyId": 2,
+  "Designation": "10t平"
+},
+{
+  "Text": "川崎三郎",
+  "Id": 6,
+  "AreaId": 11,
+  "CategoryIds": [11, 12, 13, 14],
+  "CarNumber": 9512,
+  "TruckName": "自社",
+  "CompanyId": 1,
+  "Designation": "10t平"
+},
+{
+  "Text": "横須賀花子",
+  "Id": 7,
+  "AreaId": 11,
+  "CategoryIds": [11, 12, 13, 15],
+  "CarNumber": 9876,
+  "TruckName": "自社",
+  "CompanyId": 1,
+  "Designation": "10t平"
+}
+]

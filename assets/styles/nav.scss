@@ -1,0 +1,217 @@
+nav, article, section {
+  box-sizing: border-box;
+}
+
+nav {
+  width: 100px;
+  height: 100%;
+  background-color: #FFF;
+  box-shadow: 3px 0px 10px rgba(54, 79, 79, 0.15);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.gnav li {
+  position: relative;
+  text-align: center;
+}
+
+.gnav>li>a {
+  padding: 19px 0;
+  display: block;
+  height: 80px;
+  position: relative;
+  z-index: 100;
+  background-color: #FFF;
+}
+
+.gnav li a:hover {
+  background-color: #F5FAFC;
+}
+
+.gnav li a:hover::before {
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: #4390DE;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.gnav i {
+  font-size: 24px;
+  position: relative;
+  margin: 0 0 8px 0;
+  display: inline-block;
+}
+
+.gnav a:hover i {
+  color: #4390DE;
+}
+
+.gnav a span {
+  font-size: 13px;
+  display: block;
+  letter-spacing: 0;
+}
+
+.gnav a:hover span {
+  font-weight: bold;
+  color: #4390DE;
+}
+
+.gnav .badge::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: #F45C57;
+  width: 10px;
+  height: 10px;
+  right: -8px;
+  top: -5px;
+}
+
+.gnav .child-nav {
+  display: none;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 172px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 10px rgba(54, 79, 79, 0.15);
+  border-radius: 0 5px 5px 0;
+  padding: 21px 21px 12px 21px;
+  z-index: 0;
+}
+
+.gnav>li:hover .child-nav {
+  display: block;
+}
+
+/*//////////////////////////////////
+カレント表示
+//////////////////////////////////*/
+
+.gnav .current>a {
+  background-color: #F5FAFC;
+}
+
+.gnav .current>a::before {
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: #4390DE;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.gnav .current i {
+  color: #4390DE;
+}
+
+.gnav .current span {
+  font-weight: bold;
+  color: #4390DE;
+}
+
+/*//////////////////////////////////
+ナビサブメニュー
+//////////////////////////////////*/
+
+.child-nav p {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4390DE;
+  border-bottom: 1px solid #4390DE;
+  margin: 0 0 7px 0;
+  padding: 0 0 4px 0;
+  letter-spacing: 0.5em;
+}
+
+.child-nav li {
+  margin: 0 -21px;
+}
+
+.child-nav a {
+  font-size: 14px;
+  padding: 8px 21px;
+  display: block;
+  text-indent: 1.5em;
+  position: relative;
+  letter-spacing: 0.5em;
+  text-align: left;
+}
+
+.child-nav a:after {
+  /* content: url(../img/icon_arrow_right.svg); */
+  content: url(../assets/images/icon_arrow_right.svg);
+  position: absolute;
+  width: 6px;
+  height: auto;
+  right: 42px;
+}
+
+.child-nav a:hover {
+  background-color: #F5FAFC;
+  color: #4390DE;
+  font-weight: bold;
+}
+
+.child-nav a:hover:after {
+  content: url(../assets/images/icon_arrow_right_a.svg);
+}
+
+.child-nav p:last-of-type {
+  margin: 15px 0 7px 0;
+}
+
+/*//////////////////////////////////
+ナビアイコン
+//////////////////////////////////*/
+
+i[class*="icon_"] {
+  font-family: 'nav-icon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+.icon_allocate:before {
+  content: "\e900";
+}
+
+.icon_home:before {
+  content: "\e901";
+}
+
+.icon_order:before {
+  content: "\e902";
+}
+
+.icon_news:before {
+  content: "\e903";
+}
+
+.icon_master:before {
+  content: "\e904";
+}
+
+.icon_payment:before {
+  content: "\e905";
+}
+
+.icon_report:before {
+  content: "\e906";
+}
+
+.icon_requesting:before {
+  content: "\e907";
+}
