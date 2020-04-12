@@ -2,11 +2,12 @@
   <div>
     <modal v-if="modal.show">
       <h3 slot="header">
-        <span class="subject">運行順の確定</span>
+        <span class="subject"進行確定</span>
         <i class="fas fa-times-circle" @click="closeModal"></i>
       </h3>
       <div slot="body">
         <div class="content_box">
+          <!--
           <h4>
             出発地
             <input
@@ -18,9 +19,10 @@
             />
             <label for="checkbox01">車庫</label>
           </h4>
+          -->
         </div>
         <div class="content_box sub_content">
-          <h4>運行順</h4>
+          <h4>進行順</h4>
           <ul>
             <draggable v-model="loadList">
               <transition-group>
@@ -31,7 +33,7 @@
                 >
                   <div class="loadedtype">
                     <span :class="item.Loadedtype === 1 ? 'load' : 'unload'">{{
-                      item.Loadedtype === 1 ? '積地' : '卸地'
+                      item.Loadedtype === 1 ? '開始' : '終了'
                     }}</span>
                   </div>
                   <div class="date">{{ item.Date }}</div>
@@ -54,6 +56,7 @@
           </ul>
         </div>
         <div class="content_box">
+        <!--
           <h4>
             到着地
             <input
@@ -65,11 +68,12 @@
             />
             <label for="checkbox02">車庫</label>
           </h4>
+        -->
         </div>
       </div>
       <h3 slot="footer">
         <button class="btn btnProceed" @click="onOutputDoc()">
-          運行指示書の作成
+          予約指示書の作成
         </button>
       </h3>
     </modal>

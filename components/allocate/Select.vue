@@ -69,7 +69,7 @@
         :class="[isSelectAreaOpen ? 'btnCloseTxt' : 'btnOpenTxt']"
         @click="$emit('on-toggle-select-area')"
       >
-        未割付一覧を{{ isSelectAreaOpen ? '閉じる' : '開く' }}
+        未予約一覧を{{ isSelectAreaOpen ? '閉じる' : '開く' }}
       </button>
       <button type="button" class="btn btnPrimary btnRightBottom">
         新規作成

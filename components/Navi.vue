@@ -2,11 +2,11 @@
   <nav>
     <ul class="gnav">
       <li>
-        <a href="/"> <i class="icon_home"></i> <span>ホーム</span> </a>
+        <a href="/"> <i class="fas fa-home"></i> <span>ホーム</span> </a>
       </li>
       <li class="current">
         <nuxt-link to="/allocate/allocate">
-          <i class="icon_allocate"></i> <span>タスク割当て</span>
+          <i class="far fa-calendar-alt"></i><span>会議室予約</span>
         </nuxt-link>
       </li>
     </ul>

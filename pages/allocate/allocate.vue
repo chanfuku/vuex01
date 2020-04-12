@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header bread="タスク割当て" />
+    <Header bread="会議室予約" />
     <Schedule />
   </div>
 </template>

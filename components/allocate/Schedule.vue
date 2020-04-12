@@ -26,13 +26,13 @@
     <div class="control-section">
       <div class="content-wrapper">
         <div class="titleBox">
-          <h1 class="title">タスク割当て</h1>
+          <h1 class="title">会議室予約</h1>
           <button
             type="button"
             class="btn btnPrimary btnRightBottom"
             @click="onToggleInstructionMode"
           >
-            {{ instructionMode ? '未割付一覧' : '運行指示の選択' }}
+            {{ instructionMode ? '未予約一覧' : '進行順の確定' }}
           </button>
         </div>
 
