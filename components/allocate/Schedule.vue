@@ -26,7 +26,7 @@
     <div class="control-section">
       <div class="content-wrapper">
         <div class="titleBox">
-          <h1 class="title">xxx予約</h1>
+          <h1 class="title">スケジューラー</h1>
           <button
             type="button"
             class="btn btnPrimary btnRightBottom"

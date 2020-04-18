@@ -6,21 +6,6 @@
         <i class="fas fa-times-circle" @click="closeModal"></i>
       </h3>
       <div slot="body">
-        <div class="content_box">
-          <!--
-          <h4>
-            出発地
-            <input
-              id="checkbox01"
-              type="checkbox"
-              class="checkbox"
-              name=""
-              value=""
-            />
-            <label for="checkbox01">車庫</label>
-          </h4>
-          -->
-        </div>
         <div class="content_box sub_content">
           <h4>進行順</h4>
           <ul>
@@ -55,25 +40,10 @@
             </draggable>
           </ul>
         </div>
-        <div class="content_box">
-        <!--
-          <h4>
-            到着地
-            <input
-              id="checkbox02"
-              type="checkbox"
-              class="checkbox"
-              name=""
-              value=""
-            />
-            <label for="checkbox02">車庫</label>
-          </h4>
-        -->
-        </div>
       </div>
       <h3 slot="footer">
         <button class="btn btnProceed" @click="onOutputDoc()">
-          予約指示書の作成
+          進行指示書の作成
         </button>
       </h3>
     </modal>

@@ -75,10 +75,10 @@ export default {
           ret = this.data.companyName
           break
         case 'cargo':
-          ret = '求貨'
+          ret = 'テスト'
           break
         case 'vehicle':
-          ret = '求車'
+          ret = 'テスト'
           break
         case 'memo':
           ret = 'メモ'
@@ -96,10 +96,10 @@ export default {
           ret = this.data.departureCity
           break
         case 'cargo':
-          ret = '応募あり'
+          ret = 'hoge'
           break
         case 'vehicle':
-          ret = '成約'
+          ret = 'fuga'
           break
         case 'memo':
           ret = this.data.memoBody

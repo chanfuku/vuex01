@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header bread="xxx予約" />
+    <Header bread="" />
     <Schedule />
   </div>
 </template>
