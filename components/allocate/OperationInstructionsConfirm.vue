@@ -2,7 +2,7 @@
   <div>
     <modal v-if="modal.show">
       <h3 slot="header">
-        <span class="subject"進行確定</span>
+        <span class="subject">進行確定</span>
         <i class="fas fa-times-circle" @click="closeModal"></i>
       </h3>
       <div slot="body">

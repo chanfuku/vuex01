@@ -7,7 +7,7 @@
     </ul>
     <div class="userInfo">
       <a href="#">
-        <img src="~/assets/images/img_avatar.svg" alt="" />
+        <i class="fas fa-user-circle"></i>
         <span>佐藤一郎</span>
       </a>
     </div>
@@ -50,14 +50,6 @@ header {
 
 .breadcrumbList a:hover {
   border-bottom: 1px solid #364f65;
-}
-
-.breadcrumbList li:not(:last-child)::after {
-  content: url(../assets/images/icon_arrow_right.svg);
-  margin: 0 8px;
-  width: 6px;
-  height: 6px;
-  display: inline-block;
 }
 
 /*//////////////////////////////////

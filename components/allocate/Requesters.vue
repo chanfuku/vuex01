@@ -22,13 +22,7 @@
             <i class="fas fa-times" @click="onRemove(item, index)"></i>
           </li>
         </ul>
-        <!-- <i class="remove far fa-times-circle" @click="onRemoveAll()" v-if="selected.length"></i> -->
-        <button
-          v-if="selected.length"
-          type="button"
-          class="btnCloseTag"
-          @click="onRemoveAll()"
-        ></button>
+        <i class="remove far fa-times-circle" @click="onRemoveAll()" v-if="selected.length"></i>
       </div>
       <div
         v-if="isOpened"

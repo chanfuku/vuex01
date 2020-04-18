@@ -18,6 +18,7 @@ html {
 */
 
 @charset "UTF-8";
+/*
 @font-face {
   font-family: 'nav-icon';
   src: url('../assets/fonts/nav-icon.eot');
@@ -25,6 +26,7 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+*/
 
 body {
   font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
@@ -258,14 +260,6 @@ img {
   height: 10px;
 }
 
-.icon_map::before {
-  position: absolute;
-  top: 2px;
-  left: 12px;
-  width: 10px;
-  content: url(../assets/images/icon_map.svg);
-}
-
 .rightBox {
   justify-content: flex-end;
 }
@@ -298,19 +292,6 @@ img {
   margin: 0 0 50px 0;
 }
 
-.btnAccordion::after {
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  content: url(../assets/images/btn_arrow_up.svg);
-  cursor: pointer;
-  transform: translateX(-50%);
-  box-shadow: 0px 3px 6px rgba(67, 144, 144, 0.24);
-  border-radius: 50%;
-}
-
 .btnIconAdd img {
   width: 24px;
   height: 24px;
@@ -334,33 +315,6 @@ img {
   margin: 0 0 0 40px;
 }
 
-/*テキストボタン*/
-.btnCloseTxt{
-  display:block;
-  color:#4390DE;
-  text-decoration:underline;
-  font-weight:bold;
-  padding:0 0 0 20px;
-  position:relative;
-  &::before {
-    content: url(../assets/images/btn_arrow_up.svg);
-    display: block;
-    width: 14px;
-    height: 14px;
-    position:absolute;
-    top:2px;
-    left:0;
-  }
-  &:hover {
-    opacity:.75;
-  }
-}
-.btnOpenTxt {
-  @extend .btnCloseTxt;
-  &::before {
-    content: url(../assets/images/btn_arrow_down.svg);
-  }
-}
 
 /* fadein, fadeoutの調整 */
 .fade-enter-active, .fade-leave-active {
@@ -427,7 +381,6 @@ select {
   position: relative;
   display: inline-block;
   padding: 0 25px 0 10px;
-  background-image: url(../assets/images/icon_arrow_down.svg);
   background-repeat: no-repeat;
   background-size: 8px 5px;
   background-position: right 10px center;
@@ -445,7 +398,6 @@ input[class=checkbox]+label {
 }
 
 input[class=checkbox]+label::before {
-  content: url(../assets/images/checkbox.svg);
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -456,7 +408,6 @@ input[class=checkbox]+label::before {
 }
 
 input[class=checkbox]:checked+label::after {
-  content: url(../assets/images/checkbox_checked.svg);
   display: inline-block;
   width: 10px;
   height: 7px;
@@ -472,28 +423,6 @@ input[class=bookmark]+label {
   position: relative;
   padding: 2px 0 0 25px;
   display: inline-block;
-}
-
-input[class=bookmark]+label::before {
-  content: url(../assets/images/icon_star_line.svg);
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: auto;
-  position: absolute;
-  top: 1px;
-  left: 0;
-}
-
-input[class=bookmark]:checked+label::after {
-  content: url(../assets/images/icon_star.svg);
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: auto;
-  position: absolute;
-  top: 1px;
-  left: 0;
 }
 
 /*//////////////////*/
@@ -524,7 +453,6 @@ input[class=radiobox]+label {
 }
 
 input[class=radiobox]+label::before {
-  content: url(../assets/images/radiobox.svg);
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -535,7 +463,6 @@ input[class=radiobox]+label::before {
 }
 
 input[class=radiobox]:checked+label::after {
-  content: url(../assets/images/radiobox_checked.svg);
   display: inline-block;
   width: 10px;
   height: 7px;
@@ -555,8 +482,6 @@ input[class~=date] {
   background-position: right 15px center;
   cursor: pointer;
 }
-
-
 
 /*//////////////////*/
 
@@ -671,17 +596,6 @@ input[class=tagFrom] {
   padding: 0 30px 0 0;
 }
 
-.tagDel::after {
-  width: 24px;
-  height: 24px;
-  content: url(../assets/images/btn_del.svg);
-  display: block;
-  position: absolute;
-  bottom: 13px;
-  right: 0;
-  cursor: pointer;
-}
-
 .confirmTag {
   display: flex;
   flex-wrap: wrap;
@@ -707,16 +621,6 @@ input[class=tagFrom] {
 
 .priceDetailList li:not(:last-child) {
   margin: 0 0 20px 0;
-}
-
-.priceDetailList li::after {
-  content: url(../assets/images/btn_del.svg);
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  right: -12px;
-  top: -12px;
-  cursor: pointer;
 }
 
 /*/ ///////////////////////////////////////////////*/
@@ -840,20 +744,6 @@ input[class=tagFrom] {
       color: #ffffff;
       background: $buttonColor;
       border-radius: 50%;
-    }
-    .btnCloseTag {
-      display:block;
-      width:24px;
-      height:24px;
-      position: absolute;
-      bottom: 5px;
-      right: 0;
-      &::before {
-        width: 24px;
-        display: inline-block;
-        cursor: pointer;
-        content: url(../assets/images/btn_del.svg);
-      }
     }
   }
   &--target{

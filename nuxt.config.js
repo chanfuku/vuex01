@@ -35,13 +35,14 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios'],
-  /*
+  modules: [
+      '@nuxtjs/axios',
+      'nuxt-basic-auth-module'
+  ],
   basic: {
-    name: 'dev',
-    pass: 'jmas123'
+    name: 'asahi',
+    pass: 'superdry'
   },
-  */
   /*
    ** Build configuration
    */

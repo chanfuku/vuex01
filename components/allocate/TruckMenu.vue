@@ -4,7 +4,7 @@
       v-model="value"
       :multiple="true"
       :options="truckMenu"
-      placeholder="全スタッフを表示"
+      placeholder="全表示"
       @input="input"
     />
   </div>

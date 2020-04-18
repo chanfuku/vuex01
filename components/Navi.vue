@@ -6,7 +6,7 @@
       </li>
       <li class="current">
         <nuxt-link to="/allocate/allocate">
-          <i class="far fa-calendar-alt"></i><span>会議室予約</span>
+          <i class="far fa-calendar-alt"></i><span>xxx予約</span>
         </nuxt-link>
       </li>
     </ul>
