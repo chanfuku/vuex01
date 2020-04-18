@@ -149,8 +149,6 @@ nav {
 }
 
 .child-nav a:after {
-  /* content: url(../img/icon_arrow_right.svg); */
-  content: url(../assets/images/icon_arrow_right.svg);
   position: absolute;
   width: 6px;
   height: auto;
@@ -161,10 +159,6 @@ nav {
   background-color: #F5FAFC;
   color: #4390DE;
   font-weight: bold;
-}
-
-.child-nav a:hover:after {
-  content: url(../assets/images/icon_arrow_right_a.svg);
 }
 
 .child-nav p:last-of-type {

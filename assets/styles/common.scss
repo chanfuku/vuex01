@@ -476,7 +476,6 @@ input[class=radiobox]:checked+label::after {
 
 input[class~=date] {
   padding: 0 20px 0 10px;
-  background-image: url(../assets/images/icon_calendar.svg);
   background-repeat: no-repeat;
   background-size: 10px 10px;
   background-position: right 15px center;
@@ -520,7 +519,6 @@ input[class=tagFrom] {
 .inputDate {
   input[type=input] {
     padding: 0 20px 0 10px;
-    background-image: url(../assets/images/icon_calendar.svg);
     background-repeat: no-repeat;
     background-size: 10px 10px;
     background-position: right 7px center;

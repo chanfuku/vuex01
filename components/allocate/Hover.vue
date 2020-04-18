@@ -59,7 +59,6 @@
         v-if="data.eventType === 'allocated' && data.fellowPassengerName"
         class="driverStatus"
       >
-        <img src="~/assets/images/icon_2drivers.svg" />
       </p>
       <div class="content_inner">
         <div class="content_inner1">

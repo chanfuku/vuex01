@@ -63,17 +63,7 @@
       </div>
     </transition>
     <div class="inputSlideBlock">
-      <button
-        type="button"
-        class="btnLeftBottom"
-        :class="[isSelectAreaOpen ? 'btnCloseTxt' : 'btnOpenTxt']"
-        @click="$emit('on-toggle-select-area')"
-      >
-        未予約一覧を{{ isSelectAreaOpen ? '閉じる' : '開く' }}
-      </button>
-      <button type="button" class="btn btnPrimary btnRightBottom">
-        新規作成
-      </button>
+        <i class="fas" :class="[isSelectAreaOpen ? 'fa-angle-double-up' : 'fa-angle-double-down']" @click="$emit('on-toggle-select-area')">未予約一覧を{{ isSelectAreaOpen ? '閉じる' : '開く' }}</i>
     </div>
   </div>
 </template>

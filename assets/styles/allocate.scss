@@ -263,7 +263,6 @@ $schedulerHeight: 500px; //スケジューラーの高さ
         position: relative;
         .driver {
           &.warning:before {
-            content: url(../../assets/images/icon_warning.svg);
             display: inline-block;
             width: 10px;
             height: 10px;
@@ -431,7 +430,6 @@ $schedulerHeight: 500px; //スケジューラーの高さ
       align-items: center;
       .print {
         &:after {
-          content: url(../../assets/images/icon_print_wh.svg);
           display: inline-block;
           width: 10px;
           height: 10px;
@@ -441,7 +439,6 @@ $schedulerHeight: 500px; //スケジューラーの高さ
       }
       .printed {
         &:before {
-          content: url(../../assets/images/icon_printed_wh.svg);
           display: inline-block;
           width: 10px;
           height: 10px;
@@ -452,7 +449,6 @@ $schedulerHeight: 500px; //スケジューラーの高さ
       .remove {
         cursor: pointer;
         &:before {
-          content: url(../../assets/images/btn_del_wh.svg);
           display: inline-block;
           width: 10px;
           height: 10px;
