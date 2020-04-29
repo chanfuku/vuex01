@@ -31,7 +31,7 @@
           <hr />
           <h4>登録者情報</h4>
           <div class="inner_body">
-            <span class="inner_name">株式会社自由</span>
+            <span class="inner_name">aaa株式会社</span>
           </div>
           <hr />
           <h4>掲載期限</h4>
@@ -122,7 +122,7 @@
             <div class="inner_body">
               <span class="inner_content">
                 <span class="inner_title">特記事項</span>
-                <span class="inner_name">クランプフォークでの荷扱必要</span>
+                <span class="inner_name">aaaa</span>
               </span>
             </div>
           </div>
