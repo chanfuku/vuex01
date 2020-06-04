@@ -8,7 +8,7 @@
     <div class="userInfo">
       <a href="#">
         <i class="fas fa-user-circle"></i>
-        <span>佐藤一郎</span>
+        <span>佐藤3郎</span>
       </a>
     </div>
   </header>
@@ -30,8 +30,10 @@ export default {
 </script>
 
 <style lang="scss">
+/*
 @import '~/node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '~/node_modules/@syncfusion/ej2-layouts/styles/material.css';
+*/
 
 header {
   display: flex;

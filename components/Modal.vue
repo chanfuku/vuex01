@@ -33,5 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
+/*
 @import '~/assets/styles/modal.scss';
+*/
 </style>
