@@ -1,7 +1,7 @@
 <template>
   <!-- <transition name="fade"> -->
   <div v-if="instructionMode" id="instruction_mode">
-    <p class="operation_direction_title">運行指示の案件選択</p>
+    <p class="operation_direction_title">案件選択</p>
     <ul>
       <li v-for="(item, index) in instructionList" :key="item.Id">
         <div class="instruction_content_area">
@@ -35,7 +35,7 @@
     </ul>
     <div v-if="instructionList.length > 0" class="dir_confirm">
       <button class="btn btnProceed" @click="onConfirmInstruction">
-        運行順の確定
+        確定
       </button>
     </div>
   </div>

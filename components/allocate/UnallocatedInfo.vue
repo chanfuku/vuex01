@@ -16,18 +16,18 @@
           <div class="content_inner_box_body">
             <p class="ordinal">01</p>
             <div class="inner_body">
-              <span class="inner_title_header">積池情報</span>
-              <span class="inner_title_header">卸地情報</span>
+              <span class="inner_title_header">開始情報</span>
+              <span class="inner_title_header">終了情報</span>
             </div>
             <div class="inner_body">
               <span class="inner_content">
-                <span class="inner_title w_20">積込日</span>
+                <span class="inner_title w_20">開始日</span>
                 <span class="inner_name w_60">{{
                   getYearString(cellData().startTime)
                 }}</span>
               </span>
               <span class="inner_content">
-                <span class="inner_title w_20">納品日</span>
+                <span class="inner_title w_20">終了日</span>
                 <span class="inner_name w_60">{{
                   getYearString(cellData().endTime)
                 }}</span>
@@ -70,28 +70,6 @@
               <span class="inner_content">
                 <span class="inner_title w_20">数量</span>
                 <span class="inner_name w_60">12</span>
-              </span>
-            </div>
-            <div class="inner_body">
-              <span class="inner_content">
-                <span class="inner_title w_20">LWH</span>
-                <span class="inner_name w_60">1100 x 900 x 1200</span>
-              </span>
-              <span class="inner_content">
-                <span class="inner_title w_20">重量</span>
-                <span class="inner_name w_60">250kg</span>
-              </span>
-            </div>
-            <div class="inner_body">
-              <span class="inner_content">
-                <span class="inner_title">依頼元管理No.</span>
-                <span class="inner_name">12345</span>
-              </span>
-            </div>
-            <div class="inner_body">
-              <span class="inner_content">
-                <span class="inner_title">特記事項</span>
-                <span class="inner_name">あああ</span>
               </span>
             </div>
           </div>
